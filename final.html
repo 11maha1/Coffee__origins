@@ -1,0 +1,161 @@
+<html>
+    <head>
+       </head>
+       <body>
+        
+      <div class="final">
+        <h1> تم الطلب بنجاح </h1>
+        <p>
+            عزيزنا العميل تم طلبك بنجاح وسيتواصل معك مندوبنا في اقرب وقت 
+            <br>
+            رقم الطلب #98765432
+           </p>
+  <br><Br><nR>
+    <button> <a href="index.html"> الصفحة الرئيسية </a> </button>
+    </div>
+
+      <div class="wrapper">
+        <h1>عند ملاحظات ؟</h1>
+        <div class="count">
+          <div>
+            <h4 id="character-count">0</h4>
+            <p>Characters</p>
+          </div>
+          <div>
+            <h4 id="word-count">0</h4>
+            <p>Words</p>
+          </div>
+        </div>
+        <div class="container">
+          <textarea 
+            id="input-textarea" 
+            rows="12" 
+            placeholder="Type Something here..."></textarea>
+        </div>
+      </div>
+    
+    <style>
+    html{
+    background-color: #F6F1E9 ;
+    }
+    h1{
+    text-align: center;
+    font-size: 28px;
+    padding-top: 90px;
+   }
+   .final{
+   text-align: center;
+   color:#90dee9;
+   padding-top: 5%;
+  }
+  button {
+  --color: #560bad;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  color: var(--color);
+ }
+ button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background:var(--color);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+ }
+ button:hover {
+  color: #fff;
+ }
+ button:before {
+  top: 50%;
+  left: 50%;
+  transition: all .7s;
+ }
+ button:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ button:active:before {
+  background: #807796;
+ }
+ button a{
+    color:#fff;
+    text-decoration: none;
+ }
+ .wrapper{
+    padding: 0;
+    padding-top: 10px;
+ }
+ .count {
+  background-color: #560bad;
+  width: 30%;
+  padding: 20px;
+  position: relative;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 20px 40px rgba(185, 169, 219, 0.5);
+}
+.count p {
+  color: #9191b1;
+}
+.count h4 {
+  color: #fff;
+  font-size: 32px;
+}
+.container {
+  width: 32%;
+  padding: 20px;
+  position: relative;
+  transform: translate(-50%, 36%);
+  left: 50%;
+  display: flex;
+  border-radius: 5px;
+}
+#input-textarea {
+    width: 100%;
+}
+</style>
+
+<script>
+
+let inputTextArea = document.getElementById("input-textarea");
+let characterCount = document.getElementById("character-count");
+let wordCount = document.getElementById("word-count");
+inputTextArea.addEventListener("input", () => {
+  characterCount.textContent = inputTextArea.value.length;
+  let txt = inputTextArea.value.trim();
+  wordCount.textContent = txt.split(/\s+/).filter((item) => item).length;
+})
+    // Check if the browser supports the Notification API
+    if ('Notification' in window) {
+        // Request permission for notifications
+        Notification.requestPermission().then(function (permission) {
+            if (permission === 'granted') {
+                var notification = new Notification('Hello, this is a notification!', {
+                    icon: 'path/to/icon.png' 
+                });
+                notification.addEventListener('click', function () {
+                    alert('Notification clicked!');
+                });
+            }
+        });
+    } else {
+        console.log('This browser does not support notifications.');
+    }
+  
+</script>
+       </body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+   <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css">
+   </head>
+
+   <body>
+      <header class="head">  
+         <ul>
+           <a href="bag.html"><img src="img/bag.png" height="30px width=30px"></a>
+           <a href="login.html"><img src="img/person.png " height="30px width=30px"></a>
+         </ul>
+     </header>
+
+      <div class="sections">
+         <ul>
+           <li><a href="Accessories.html">اكسسوارات</a></li>
+           <li><a href="coffee.html">قهوة </a></li>
+           <li><a href="tools.html">ادوات</a></li>
+           <li><a href="package.html">بكجات </a></li>
+           <li><a href="index.html">الرئيسية</a></li>
+         </ul>
+     </div>
+
+     <h4> سلة التسوق</h4>
+
+<section class="allBag">
+
+<div class="cardBag">
+    <div class="cardBAg-inner">
+      <h1 id="Bagtitle"> ملخص الطلب</h1>
+      <div class="bagimg">
+       <p id="Bagp">
+      مجموع المنتجات : 90 
+       <br>
+       الاجمالي : 90 ريال 
+       <br>
+      <span class="pay"> الدفع عند الاستلام<input type="checkbox">       </span>
+      <button id="notifyBtn">اتمام الطلب </button>
+      <div id="notification"></div>
+    </p>
+    </div>
+  </div>
+
+  <div class="finalPage">
+    <h6><q><a href="final.html">للاطلاع على الفاتورة </a></q></h6>
+  </div>
+</div>
+</section>
+
+      <div class="footer-basic">
+         <footer>
+             <div class="social">
+               <a href="#"><i class="icon ion-social-instagram"></i></a>
+               <a href="#"><i class="icon ion-social-snapchat"></i></a>
+               <a href="#"><i class="icon ion-social-twitter"></i></a>
+               <a href="#"><i class="icon ion-social-facebook"></i></a>
+             </div>
+     
+             <ul class="list-inline">
+                 <li class="list-inline-item"><a href="#">الرئيسية</a></li>
+                 <li class="list-inline-item"><a href="us.html">من نحن</a></li>
+                 <li class="list-inline-item"><a href="polic.html">السياسة والخصوصية </a></li>
+             </ul>
+             <p class="copyright"> جذور القهوة   © 2023</p>
+         </footer>
+     </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+     <script>
+      alert("تمم الطلب ولك خصم 20% على طلبك الجاي!!");
+
+  //js code to shoe msg
+    document.getElementById('notifyBtn').addEventListener('click', function() {
+    showNotification('تم الطلب بنجاح');
+});
+
+function showNotification(message) {
+    var notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.classList.add('show');
+
+    setTimeout(function() {
+        notification.classList.remove('show');
+    }, 2000);
+}
+     </script>
+   </body>
+</html>
